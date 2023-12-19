@@ -1,0 +1,1 @@
+<button  class='btn btn-danger '><a href='delete.php?deleteid='.$id.' class='text-light'>Delete</a></button>
