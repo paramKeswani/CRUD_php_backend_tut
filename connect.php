@@ -4,7 +4,7 @@
     error_reporting(E_ALL ^ E_WARNING);
     $servername = "localhost";
 $username = "root";
-$password = ""; // Make sure the password is correct
+$password = "root"; // Make sure the password is correct
 $dbname = "crud";
 $con = new mysqli($servername, $username, $password, $dbname);
 

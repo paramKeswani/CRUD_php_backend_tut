@@ -13,11 +13,12 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" enctype="multipart/form-data">
     <div class="btn btn-primary"><a href="user.php" style="color:white;text-decoration:off;">ADD USER</a>  </div>
     <table class="table">
   <thead>
     <tr>
+      <th scope="col">Image</th>
       <th scope="col">SrNo</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
@@ -34,9 +35,9 @@
 
     $result = mysqli_query($con,$sql);
 
-    while($row = mysqli_fetch_assoc($result))
+    while($row = mysqli_fetch_array($result))
     {
-                
+        $image = $row['image'] ;       
         $id = $row['id'];
         $name = $row['name'];
         $email = $row['email'];
@@ -44,7 +45,13 @@
         $password = $row['password'];
 
         echo "
-<tr>
+<tr>";
+
+echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200" class="img-thumnail" />';
+
+echo "
+
+
     <td>$id</td>
     <td>$name</td>
     <td>$email</td>
